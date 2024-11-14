@@ -3,7 +3,7 @@ name: Lighthouse CI
 on:
   pull_request:
     branches:
-      - main  # Replace with your primary branch name if different
+      - main  # Adjust this as needed
 
 jobs:
   lighthouse:
@@ -22,7 +22,7 @@ jobs:
         run: npm install -g @lhci/cli
 
       - name: Run Lighthouse CI
-        run: lhci autorun
+        run: lhci autorun --config=./lighthouserc.json
         env:
-          LHCI_GITHUB_APP_TOKEN: ${{ secrets.LHCI_GITHUB_APP_TOKEN }}  # Optional if using a GitHub token
+          LHCI_GITHUB_APP_TOKEN: ${{ secrets.LHCI_GITHUB_APP_TOKEN }}  # Optional if using GitHub token for PR comments
 
