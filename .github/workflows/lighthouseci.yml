@@ -4,6 +4,8 @@ on:
   pull_request:
     branches:
       - main  # Adjust this as needed
+  schedule:
+    - cron: '0 0 * * *'  # Runs daily at midnight UTC. Adjust as necessary for your schedule.
 
 jobs:
   lighthouse:
@@ -24,5 +26,8 @@ jobs:
       - name: Run Lighthouse CI
         run: lhci autorun --config=./lighthouserc.json
         env:
-          LHCI_GITHUB_APP_TOKEN: ${{ secrets.LHCI_GITHUB_APP_TOKEN }}  # Optional if using GitHub token for PR comments
+          LHCI_GITHUB_TOKEN: ${{ secrets.LHCI_GITHUB_TOKEN }}
+          
+     
+
 
