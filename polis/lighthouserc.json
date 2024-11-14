@@ -1,0 +1,19 @@
+{
+    "ci": {
+      "collect": {
+        "url": [
+          "https://pol.is/4cvkai2ctw",      // participation page
+          "https://pol.is/report/r7f89nk32sjuknecjbrxp",              //Report page
+          "https://pol.is/signin"           // signin page
+        ],
+        "numberOfRuns": 3                           // Number of test runs per URL
+      },
+      "assert": {
+        "preset": "lighthouse:recommended"
+      },
+      "upload": {
+        "target": "temporary-public-storage"        // Or your own server URL
+      }
+    }
+  }
+  
